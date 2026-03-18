@@ -1,70 +1,26 @@
-# Portfolio Items 6–9 Reproducibility Repository
+# Portfolio Items 6–9: Social Media and Academic Performance Analysis
 
-This repository contains plain Python scripts that reproduce the analyses for portfolio Items 6, 7, 8, and 9 from the **Students Social Media Addiction** dataset.
+## Overview
 
-## Repository structure
+This repository contains the code used to reproduce the analyses for Portfolio Items 6, 7, 8, and 9.
 
-- `scripts/data_utils.py` — data loading and preprocessing
-- `scripts/item6_analysis.py` — logistic regression with interaction term
-- `scripts/item7_comparison.py` — OLS vs logistic regression comparison
-- `scripts/item8_model_selection.py` — likelihood-based model comparison
-- `scripts/item9_causal_adjustment.py` — crude vs adjusted causal-style analysis
-- `scripts/run_all.py` — runs all analyses and saves outputs
-- `requirements.txt` — Python dependencies
+The analysis is based on the **Students Social Media Addiction dataset** and investigates the relationship between social media usage, sleep, and academic performance.
 
-## Expected dataset
+---
 
-Place the dataset CSV file here:
+## Contents
 
-```text
-data/Students Social Media Addiction.csv
-```
+- `portfolio_items_6_9_clean.py`  
+  Main Python script containing all analyses for Items 6–9
 
-The scripts assume the dataset contains at least these columns:
+- `Students Social Media Addiction.csv`  
+  Dataset used in the analysis (not included if restricted)
 
-- `Age`
-- `Gender`
-- `Academic_Level`
-- `Avg_Daily_Usage_Hours`
-- `Sleep_Hours_Per_Night`
-- `Affects_Academic_Performance`
+---
 
-## How to run
+## Requirements
 
-Create and activate a virtual environment, then install dependencies:
+Install the required Python packages:
 
 ```bash
-python -m venv .venv
-source .venv/bin/activate        # Linux / macOS
-# .venv\Scripts\activate         # Windows
-
-pip install -r requirements.txt
-```
-
-Run the full pipeline:
-
-```bash
-python scripts/run_all.py --data "data/Students Social Media Addiction.csv" --output output
-```
-
-## Outputs
-
-The pipeline writes plots and summary tables to the `output/` directory, including:
-
-- `item6_results.csv`
-- `item6_plot.png`
-- `item7_comparison.csv`
-- `item7_plot.png`
-- `item8_model_comparison.csv`
-- `item8_lr_tests.txt`
-- `item8_plot.png`
-- `item9_crude_summary.txt`
-- `item9_adjusted_summary.txt`
-- `item9_effect_estimates.txt`
-- `item9_plot.png`
-
-## Notes
-
-- These scripts are a direct script-based rewrite of the original notebook workflow.
-- The notebook itself is intentionally **not required** for reproduction.
-- For submission, replace the placeholder repository link in the report with your public GitHub or GitLab URL if you publish this repository online.
+pip install pandas numpy matplotlib seaborn statsmodels scipy
